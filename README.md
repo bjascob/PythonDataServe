@@ -10,9 +10,6 @@ The library includes a very simple HTTP Server for basic data types and a Proxy 
 
 The library also contains a DataContainer utility class to encapsulate pickling, gzipping, loading and saving functionality.  This simplifies some common data operations.
 
-The only external requirement is the commonly used "requests" library and its sub-dependencies.
-
-
 ## Documentation
 For the latest documentation, see **[ReadTheDocs](https://pythondataserve.readthedocs.io/en/latest/)**.  Alternatively, you can view the markup files directly in the __*docs*__ folder of this project.
 
@@ -20,6 +17,8 @@ You can see example implementations in the __*tests*__ folder.
 
 ## Setup
 The project is designed to work with python 3.
+
+The only external requirement is the commonly used "requests" library and its sub-dependencies.
 
 To install do..
 ```
