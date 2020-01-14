@@ -12,9 +12,9 @@ def run_proxy_server(proxy_class, port):
     proxy_name = proxy_class.__name__
     authkey = proxy_name.encode()
     class myManager(SyncManager): pass
-    myManager.register(proxy_name, proxy_class)
+    myManager.register(proxy_name, proxy_class) # pylint: disable=E1101
     mgr = myManager(address=('', port), authkey=authkey)
-    server = mgr.get_server()
+    server = mgr.get_server() # pylint: disable=E1101
     # Start the server
     print('Serving data on port %d. Press <ctrl>-c to stop.' % port)
     try:
@@ -32,10 +32,10 @@ def get_proxy_class(proxy_name, port, host='localhost'):
     try:
         mgr.connect()
     except ConnectionRefusedError:
-        logger.error('Can not connect to server at %s:%s' % (host, port))
+        logger.error('Can not connect to server at %s:%s', host, port)
         return None
     class_ = getattr(mgr, proxy_name, None)
     if class_ is None:
-        logger.error('Server does not have a proxy class: %s' % proxy_name)
+        logger.error('Server does not have a proxy class: %s', proxy_name)
         return None
     return class_()

@@ -1,7 +1,8 @@
 import json
 import logging
 
-# See https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+# See https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/
+#   Complete_list_of_MIME_types
 dtype_text = 'text/plain'
 dtype_json = 'application/json'
 dtype_bin  = 'application/octet-stream'
@@ -24,7 +25,7 @@ def to_binary(obj):
             jstring = json.dumps(obj)
             return jstring.encode(), dtype_json
         except TypeError:
-            logger.error('Unsupported object type of %s' % type(obj))
+            logger.error('Unsupported object type of %s', type(obj))
             return None, ''
 
 # Convert binary stream data into a python object
@@ -36,5 +37,5 @@ def from_binary(data, ctype):
     elif ctype == dtype_bin:
         return data
     else:
-        logger.error('Invalid content type: %s' % ctype)
+        logger.error('Invalid content type: %s', ctype)
         return None

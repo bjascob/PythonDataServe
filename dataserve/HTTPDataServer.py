@@ -23,9 +23,10 @@ def run_http_server(port, data_handler):
 # Base class for user defined handlers
 class HTTPDataHandler(ABC, BaseHTTPRequestHandler):
     # Header for OK response
-    def form_ok_header(self, dtype):
+    def form_ok_header(self, dtype=None):
         self.send_response(200)     # code 200 = OK
-        self.send_header(CONTENT_TYPE, dtype)
+        if dtype is not None:
+            self.send_header(CONTENT_TYPE, dtype)
         self.end_headers()
 
     # Header for bad request response
@@ -60,14 +61,14 @@ class HTTPDataHandler(ABC, BaseHTTPRequestHandler):
         ctype = self.headers.get(CONTENT_TYPE, '')
         payload_in = from_binary(data, ctype)
         if payload_in is None:
-            logger.warning('Invalid content type: %s' % ctype)
+            logger.warning('Invalid content type: %s', ctype)
             self.form_bad_header()
             return
         # Run the handler, if one exists
         resource = self.get_resource()
         response = self.handle_request(resource, payload_in)
         if response is None:
-            logger.warning('Unhandled resource path: %s' % resource)
+            logger.warning('Unhandled resource path: %s', resource)
             self.form_bad_header()
             return
         # return the response
@@ -76,7 +77,7 @@ class HTTPDataHandler(ABC, BaseHTTPRequestHandler):
         self.wfile.write(payload_out)
 
     # Silence the accepted (success) message logging. Errors are still logged
-    def log_request(self, format, *args):
+    def log_request(self, code='-', size='-'):
         return
 
     #######################################################
