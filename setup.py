@@ -9,7 +9,7 @@ with open('README.md', 'r') as fh:
     readme = fh.read()
 
 setuptools.setup(
-    name='PythonDataServe',
+    name='dataserve',
     version=__version__,
     author='Brad Jascob',
     author_email='bjascob@msn.com',
