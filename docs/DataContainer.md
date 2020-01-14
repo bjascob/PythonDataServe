@@ -1,6 +1,6 @@
 # DataContainer
 
-The DataContainer is a small class that facilitates saving raw data to a .pkl file.
+The DataContainer is a small class that facilitates saving python object data to a .pkl or .pkl.gz file.
 
 ## Example
 
@@ -8,8 +8,8 @@ The DataContainer is a small class that facilitates saving raw data to a .pkl fi
 from dataserve import DataContainer
 dc = DataContainer()
 dc.x = 5
-dc.y = 'a'
-dc.add_object_data( my_object )
+dc.y = 'a'                      # add data directly to the container
+dc.add_object_data( my_object ) # add attributes from another object to the container
 dc.save('test.pkl.gz')
 
 dc2 = DataContainer('test.pkl.gz')
@@ -20,7 +20,7 @@ dc2 = DataContainer('test.pkl.gz')
 ```
 DataContainer(self, load_fn=None)
 ```
-If the optional `load_fn` is supplied, the pkl or pkl.gz file will be loaded.
+If the optional `load_fn` is supplied, the pkl or pkl.gz file will be loaded into the container.
 
 **add_object_data**
 ```

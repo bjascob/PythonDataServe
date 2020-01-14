@@ -16,7 +16,7 @@ setuptools.setup(
     description='A module for serving up python data in a stand-alone process.'
     long_description=readme,
     long_description_content_type='text/markdown',
-    url='https://github.com/bjascob/xxxxx',     #rbf
+    url='https://github.com/bjascob/PythonDataServe',   
     install_requires = ['requests'],
     packages=setuptools.find_packages(),
     classifiers=[

@@ -33,7 +33,7 @@ ret_val = client.get_xdata(val=5)
 ret_val = client.get_ydata()
 ```
 
-See more complete examples in the repository's tests/manual directory: **[RunProxyServer](https://bjascob/pythondataserve/tests/manual/10_RunProxyServer.py)** and **[TestProxyServer](https://bjascob/pythondataserve/tests/manual/12_TestProxyServer.py)**.
+See more complete examples in the repository's tests/manual directory: **[RunProxyServer](https://github.com/bjascob/PythonDataServe/blob/master/tests/manual/10_RunProxyServer.py)** and **[TestProxyServer](https://github.com/bjascob/PythonDataServe/blob/master/tests/manual/12_TestProxyServer.py)**.
 
 ## Methods
 **run_proxy_server**
