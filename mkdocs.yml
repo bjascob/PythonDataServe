@@ -1,0 +1,7 @@
+site_name: PythonDataServe
+nav:
+- Home: index.md
+- DataContainer: DataContainer.md
+- ProxyServer: ProxyServer.md
+- HTTPDataServer: HTTPDataServer.md
+theme: readthedocs
