@@ -13,7 +13,7 @@ setuptools.setup(
     version=__version__,
     author='Brad Jascob',
     author_email='bjascob@msn.com',
-    description='A module for serving up python data in a stand-alone process.'
+    description='A module for serving up python data in a stand-alone process.',
     long_description=readme,
     long_description_content_type='text/markdown',
     url='https://github.com/bjascob/PythonDataServe',   
